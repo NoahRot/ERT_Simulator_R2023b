@@ -1,0 +1,4 @@
+N2422 144 607 0 6.06 11.739 ERT //N2O mass with gaseous phase. tank mass with contigency: 5.kg
+ 0.02       3.1
+ 5.44       2.1
+ 6.38       0.0
