@@ -1,0 +1,12 @@
+Margin      1
+Alpha       1
+Cn_alpha    1
+Xcp         1
+Cd          1
+Mass        1
+CM          1
+Il          1
+Ir          1
+Delta       1
+Nose_Alpha  1
+Nose_Delta  1
