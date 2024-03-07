@@ -54,7 +54,7 @@ Plot(T_, a_, p_, rho_, nu_, alt_, 1)
 % Compare with value in literature
 % Source : https://www.engineeringtoolbox.com/international-standard-atmosphere-d_985.html
 alt_compare = linspace(1000, 30000, 11);
-[~, ~, ~, rho0, ~] = atmosphere(0);
+[~, ~, ~, rho0, ~] = atmosphere(0, env);
 for k = 1:length(alt_compare)
     [T, a, p, rho, nu] = atmosphere(alt_compare(k), env);
     disp(["z:" alt_compare(k) "T:" num2str(T) ", p:" num2str(p) ", rho:" num2str(rho/rho0), ", c:" num2str(a)])
@@ -106,6 +106,7 @@ function Plot(T, a, p, rho, nu, alt, fig_nbr)
     plot(nu, alt, LineWidth=1.5)
     grid on
     box on
+    set(gca, 'XScale', 'log')
     xlabel("$\nu$ [m$^2$/s]")
     ylabel("$h$ [km]")
 
