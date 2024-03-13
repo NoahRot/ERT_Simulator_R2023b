@@ -3,6 +3,7 @@
 addpath(genpath('./../Declarations'),...
         genpath('./../Functions'),...
         genpath('./../Snippets'),...
+        genpath('./../Archives/Models'),...
         genpath('./../Simulator_3D'));
 
 set(groot, 'defaultAxesFontSize', 22);
@@ -13,7 +14,7 @@ set(groot, 'defaultAxesTickLabelInterpreter', 'latex')
 % Objective compare the atmospheric model
 
 % Load environement 
-env = environnementReader('Environment/Environnement_Definition_Wasserfallen.txt');
+env = environnementReader('Environment/Environnement_Definition_EuRoC.txt');
 
 % Altitude and Results array
 len = 1e5;

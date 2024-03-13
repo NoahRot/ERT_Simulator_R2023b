@@ -26,11 +26,6 @@ function [T, a, p, rho, Nu] = stdAtmos(alt,Env)
 if alt > 1e5
     error('stdAtmos:outOfRange', 'The altitude is out of range: max 10km.')
 end
-% === DEBUG TEST ATMOSPHERE === %
-[T, a, p, rho, Nu] = atmosphere(alt, Env);
-return
-% disp("ERROR")
-% === DEBUG TEST ATMOSPHERE === %
     
 % CONSTANTS
 R = 287.04; %[M^2/?K/sec^2] real gas constant of air
