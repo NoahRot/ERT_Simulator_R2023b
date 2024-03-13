@@ -84,7 +84,7 @@ classdef Simulator3D < handle
 
             % Environment
             g = 9.81;               % Gravity [m/s2] 
-            [~, a, ~, rho, Nu] = stdAtmos(x*sin(obj.Environment.Rail_Angle),obj.Environment); % Atmosphere information (TODO: Include effect of humidity and departure altitude)
+            [~, a, ~, rho, Nu] = atmosphere(x*sin(obj.Environment.Rail_Angle),obj.Environment); % Atmosphere information (TODO: Include effect of humidity and departure altitude)
 
             % Force estimation
 
@@ -144,7 +144,7 @@ classdef Simulator3D < handle
 
             % Environment
             g = 9.81;               % Gravity [m/s2] 
-            [~, a, ~, rho, nu] = stdAtmos(X(3)+obj.Environment.Start_Altitude,...
+            [~, a, ~, rho, nu] = atmosphere(X(3)+obj.Environment.Start_Altitude,...
                 obj.Environment); % Atmosphere information 
 
             % Force estimations 
@@ -279,7 +279,7 @@ classdef Simulator3D < handle
             V = s(4:6);
 
             % Atmospheric Data
-            [~, ~, ~, rho] = stdAtmos(X(3)+Environment.Start_Altitude, Environment); % Atmosphere [K,m/s,Pa,kg/m3]
+            [~, ~, ~, rho] = atmosphere(X(3)+Environment.Start_Altitude, Environment); % Atmosphere [K,m/s,Pa,kg/m3]
 
             % Aerodynamic force
             Vrel = -V + ...
@@ -319,7 +319,7 @@ classdef Simulator3D < handle
             ZE = [0, 0, 1]';
 
             % atmosphere
-            [~, a, ~, rho, nu] = stdAtmos(X(3)+Environment.Start_Altitude, Environment);
+            [~, a, ~, rho, nu] = atmosphere(X(3)+Environment.Start_Altitude, Environment);
 
             % mass
             M = Rocket.rocket_m;
@@ -360,7 +360,7 @@ classdef Simulator3D < handle
             ZE = [0, 0, 1]';
 
             % atmosphere
-            [~, a, ~, rho, nu] = stdAtmos(X(3)+Environment.Start_Altitude, Environment);
+            [~, a, ~, rho, nu] = atmosphere(X(3)+Environment.Start_Altitude, Environment);
 
             % mass
             M = Rocket.rocket_m;
@@ -423,7 +423,7 @@ classdef Simulator3D < handle
 
             % Environment
             g = 9.81;               % Gravity [m/s2]
-            [~, a, ~, rho, nu] = stdAtmos(X(3)+obj.Environment.Start_Altitude,...
+            [~, a, ~, rho, nu] = atmosphere(X(3)+obj.Environment.Start_Altitude,...
                 obj.Environment); % Atmosphere information 
 
             % Force estimations 
@@ -550,7 +550,7 @@ classdef Simulator3D < handle
             ZE = [0, 0, 1]';
 
             % atmosphere
-            [~, a, ~, rho, nu] = stdAtmos(X(3)+Environment.Start_Altitude, Environment);
+            [~, a, ~, rho, nu] = atmosphere(X(3)+Environment.Start_Altitude, Environment);
 
             % mass
             M = Rocket.pl_mass;
