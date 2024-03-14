@@ -27,8 +27,6 @@
 function [T, a, p, rho, nu] = atmosphere(alt, env)
     % Check that altitude isn't greater than 100 km
     if alt > 1e5
-        disp(['ERROR [atmosphere] : The altitude is out of range: max 100km.' ...
-            'return maximum value at 100km'])
         alt = 1e5;
     end
 
@@ -56,13 +54,16 @@ function [T, a, p, rho, nu] = atmosphere(alt, env)
     p = p0 * exp(- g * alt / (T0 * R_star));
 
     % Density (ideal gas law)
+    % Source : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6764509/
     x = env.Saturation_Vapor_Ratio*env.Humidity_Ground;
-    rho = p / (T * R_star)*(1+x)/(1+1.609*x);
+    rho = p / (T * R_star) * (1 + x) / (1 + 1.609 * x);
     
     % Viscosity
     % Source https://www.grc.nasa.gov/www/k-12/airplane/viscosity.html
     mu = 1.458 * 1e-6 * T^1.5 / (T + 110.4);    % Dynamic viscosity
     nu = mu / rho;                              % Kinematic viscosity
+
+    %[T, a, p, rho, nu] = old_atm(alt, env);
 end
 
 
