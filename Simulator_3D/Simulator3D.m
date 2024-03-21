@@ -109,6 +109,11 @@ classdef Simulator3D < handle
                 v_dot = 0;
             end % <--- ajout
 
+            if v_dot < 0
+                x_dot = 0;
+                v_dot = 0;
+            end 
+
             S_dot = [x_dot; v_dot];
         end
        

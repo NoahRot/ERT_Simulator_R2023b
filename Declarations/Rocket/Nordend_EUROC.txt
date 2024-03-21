@@ -22,7 +22,7 @@ pl_mass 2.8
 para_main_SCD 12.064	
 para_drogue_SCD 0.905	
 para_main_event 400		
-motor Euroc_motor.txt
+motor Euroc_motor_nordend.txt
 motor_fac 1
 cone_mode off			
 cp_fac 1

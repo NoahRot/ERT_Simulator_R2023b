@@ -8,7 +8,9 @@ addpath(genpath('./Declarations'),...
         genpath('./Simulator_3D'));
 % Rocket Definition
 Rocket = rocketReader('Nordend_EUROC.txt');
-Environment = environnementReader('Environment/Environnement_Definition_EuRoC.txt');
+
+Environment = environnementReader('Environment/Environnement_Definition_Wasserfallen.txt');
+
 SimOutputs = SimOutputReader('Simulation/Simulation_outputs.txt');
 
 SimObj = Simulator3D(Rocket, Environment, SimOutputs);
